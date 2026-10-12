@@ -88,3 +88,25 @@ body.booking-open{overflow:hidden}
 .manager-item-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
 .manager-item-actions .outline-btn{font-size:9px;padding:10px}
 @media(max-width:640px){.manager-form{grid-template-columns:1fr}.manager-form>label,.manager-form>label:has(textarea),.manager-form>.fields,.manager-form>.manager-actions,.manager-form>.note{grid-column:1}.manager-item{grid-template-columns:64px minmax(0,1fr)}.manager-item>img,.manager-image-empty{width:64px;height:72px}.manager-item-actions{grid-column:1/-1;justify-content:flex-start}.professional-photo{height:280px}.service-image{height:170px}}
+
+/* Admin booking calendar: drag a booking card into a time slot. */
+.schedule-date-label{display:flex;flex-direction:column;gap:7px;font-size:9px;letter-spacing:1.5px;color:#E7D6C1;min-width:190px}
+.schedule-date-label input{background:#2B1D17;color:#FAF6F0;border:1px solid #6B4A3A;padding:11px;min-width:0}
+.schedule-legend{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:10px;color:#E7D6C1;margin:14px 0 18px}
+.schedule-legend span{display:flex;align-items:center;gap:7px}
+.schedule-legend i{display:inline-block;width:8px;height:8px;border-radius:50%}
+.legend-pending{background:#C48A5A}.legend-confirmed{background:#7FA88A}
+.schedule-board{display:grid;gap:7px}
+.schedule-slot{display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px;align-items:stretch;min-height:74px;border:1px solid #6B4A3A;background:#2B1D17;padding:8px;transition:border-color .15s,background .15s}
+.schedule-slot.drag-over{border-color:#C48A5A;background:#6B4A3A66;box-shadow:inset 0 0 0 1px #C48A5A}
+.schedule-time{font:600 19px Oswald,sans-serif;color:#C48A5A;display:flex;align-items:flex-start;padding:8px 0 0 4px}
+.schedule-slot-content{display:flex;gap:8px;align-items:stretch;flex-wrap:wrap;min-width:0}
+.schedule-empty{border:1px dashed #6B4A3A;color:#E7D6C1;display:flex;align-items:center;padding:12px 16px;font-size:10px;min-height:52px;flex:1}
+.schedule-booking{display:flex;flex-direction:column;gap:5px;min-width:180px;max-width:280px;flex:1;padding:11px 13px;border:1px solid #C48A5A;background:#35251E;cursor:grab;user-select:none}
+.schedule-booking:active{cursor:grabbing}.schedule-booking.is-dragging,.booking-row.is-dragging{opacity:.45}
+.schedule-booking b{font-size:12px;color:#FAF6F0;overflow-wrap:anywhere}
+.schedule-booking small{font-size:10px;color:#E7D6C1;line-height:1.5}
+.schedule-booking span{font-size:9px;letter-spacing:1px;color:#C48A5A}
+.schedule-booking.confirmed{border-color:#7FA88A}.schedule-booking.completed{border-color:#6B4A3A;opacity:.7}
+.booking-row[draggable=true]{cursor:grab}.booking-row[draggable=true]:active{cursor:grabbing}
+@media(max-width:640px){.schedule-admin .panel-head{align-items:stretch;flex-direction:column}.schedule-date-label{min-width:0}.schedule-slot{grid-template-columns:52px minmax(0,1fr);gap:7px;padding:6px}.schedule-time{font-size:16px}.schedule-booking{min-width:100%;max-width:none}.schedule-empty{width:100%;min-height:42px}}
